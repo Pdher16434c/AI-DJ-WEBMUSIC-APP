@@ -27,6 +27,15 @@ function gotPoses(results){
     rightWristY = results[0].pose.rightWrist.y;
     console.log("righttWristX = " + rightWristX +"rightWristY = "+ rightWristY);
     }
+    if(score_leftWrist > 0.2)
+{
+circle(leftWristX, leftWristY,20);
+InNumberleftWristY = Number(leftWristY);
+remove_decimal = floor(InNumberleftWristY);
+volume = remove_decimal/500;
+document.getElementById("volume").innerHTML = "volume = " + volume;
+song.setVolume(volume);
+}
     }
 function draw(){
 image(video, 0, 0, 600, 500);
